@@ -1,0 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App{
+  background-image: url('https://t4.ftcdn.net/jpg/02/86/18/21/360_F_286182178_CsReLGXEhZbLMO6wnkpDW5kfcgW58o6A.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
