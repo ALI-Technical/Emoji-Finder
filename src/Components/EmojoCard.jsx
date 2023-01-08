@@ -9,6 +9,10 @@ const EmojoCard = () => {
     setSearchval(e.target.value.toLowerCase())
   }
 
+  const handleCopy = (symbol) => {
+    navigator.clipboard.writeText(symbol);
+  }
+
   return (
     <section className="mainBox">
       <div className="innerBox">
@@ -28,7 +32,7 @@ const EmojoCard = () => {
             if (searchVal !== "") {
               if (keywords.includes(searchVal)) {
                 return (
-                  <div key={ind} className="symbolBox">
+                  <div key={ind} onClick={() => handleCopy(item.symbol)} className="symbolBox">
                     <h1>{item.symbol}</h1>
                     <h3>{item.title}</h3>
                   </div>
@@ -36,14 +40,23 @@ const EmojoCard = () => {
               }
             }
             else {
-                return (
-                    <div key={ind} className="symbolBox">
-                      <h1>{item.symbol}</h1>
-                      <h3>{item.title}</h3>
-                    </div>
-                  );
+              return (
+                <div key={ind} onClick={() => handleCopy(item.symbol)} className="symbolBox">
+                  <h1>{item.symbol}</h1>
+                  <h3>{item.title}</h3>
+                </div>
+              );
             }
           })}
+        </div>
+        <div className="developerBox flex justify-center items-center mt-3">
+          <marquee>
+            <h3 className="text-2xl font-mono font-semibold uppercase">Developer:
+              <a href="https://github.com/ALI-Technical" target={"_blank"}>
+                ALI <i class="fa-solid fa-arrow-up-right-from-square text-lg"></i>
+              </a>
+            </h3>
+          </marquee>
         </div>
       </div>
     </section>
